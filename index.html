@@ -104,7 +104,7 @@
                 const model = $('input[name="model"]').val();
                 const condition = document.satei.condition;
 		const numCondition = condition.selectedIndex;
-		const strCondition = condition.options[numC].value;
+		const strCondition = condition.options[numCondition].value;
 		const modelyear = $('input[name="modelyear"]').val();
 		const serial = $('input[name="serial"]').val();
                 const guarantee = document.satei.guarantee;
@@ -118,7 +118,7 @@
 		const msgStart = `査定スタート`;
                 sendText(msgStart);
 		    
-                const msgForm = `【査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル名・型式：${model}\n③コンディション：${strCondition}\n④年式：${modelyear}\n⑤シリアル：${serial}\n⑥ギャランティー/保証書：${strGuarantee}\n⑦正規品/並行輸入品：${strGenuin}\n⑧その他情報：${others}`;
+                const msgForm = `【時計査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル名・型式：${model}\n③コンディション：${strCondition}\n④年式：${modelyear}\n⑤シリアル：${serial}\n⑥ギャランティー/保証書：${strGuarantee}\n⑦正規品/並行輸入品：${strGenuin}\n⑧その他情報：${others}`;
                 sendText(msgForm);
 		    
                 return false;
