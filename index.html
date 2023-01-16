@@ -12,9 +12,9 @@
     <form class="w-75 mx-auto" name="satei">
         <p class="mt-3">① ブランド名*</p>
         <div>
-            <input class="form-control w-100 mt-1" name="brand" placeholder="" required>
+            <input class="form-control w-100 mt-1" name="brand" required>
         </div>
-        <p class="mt-3">② モデル・形式*</p>
+        <p class="mt-3">② モデル・型式*</p>
         <div>
             <input class="form-control w-100 mt-1" name="model" required>
         </div>
@@ -29,24 +29,24 @@
 		<option value="使用感かなりあり">使用感かなりあり</option>
 	    </select>
         </div>
-	<p class="mt-3">④ 年式</p>
+        <p class="mt-3">④ 年式</p>
         <div>
-            <input class="form-control w-100 mt-1" name="modelyear">
-        </div>
-	<p class="mt-3">⑤ シリアル</p>
+            <input class="form-control w-100 mt-1" name="modelYear">
+	</div>
+        <p class="mt-3">⑤ シリアル</p>
         <div>
             <input class="form-control w-100 mt-1" name="serial">
         </div>
-        <p class="mt-3">⑥ ギャランティー/保証書</p>
+	<p class="mt-3">⑥ ギャランティー/保証書</p>
         <div>
 	    <select class="form-control w-100 mt-1" name="guarantee">
 		<option value="" selected>選択してください</option>
 		<option value="ギャランティーカードあり">ギャランティーカードあり</option>
-		<option value="保証書あり">保証書あり</option>
+		<option value="保証書あり">ギャランティーカードあり</option>
 		<option value="なし">なし</option>
 	    </select>
         </div>
-        <p class="mt-3">⑦ 正規品/並行輸入品</p>
+	p class="mt-3">⑦ 正規品/並行輸入品</p>
         <div>
 	    <select class="form-control w-100 mt-1" name="genuine">
 		<option value="" selected>選択してください</option>
@@ -55,7 +55,7 @@
 		<option value="不明">不明</option>
 	    </select>
         </div>
-	<p class="mt-3">⑧ その他情報</p>
+        <p class="mt-3">⑧ その他情報</p>
         <div>
             <input class="form-control w-100 mt-1" name="others">
         </div>
@@ -70,7 +70,7 @@
     <script>
         
         $(document).ready(function () {
-            const liffId = "1657806132-nDD94e6Q";
+            const liffId = "1657806132-BLWjrkpx";
             initializeLiff(liffId);
         })
 
@@ -102,23 +102,24 @@
             $('form').submit(function () {
                 const brand = $('input[name="brand"]').val();
                 const model = $('input[name="model"]').val();
-                const condition = document.satei.condition;
+		const condition = document.satei.condition;
 		const numCondition = condition.selectedIndex;
 		const strCondition = condition.options[numCondition].value;
-		const modelyear = $('input[name="modelyear"]').val();
-		const serial = $('input[name="serial"]').val();
+                const modelYear  = $('input[name="modelYear"]').val();
+                const serial = $('input[name="serial"]').val();
                 const guarantee = document.satei.guarantee;
 		const numGuarantee = guarantee.selectedIndex;
 		const strGuarantee = guarantee.options[numGuarantee].value;
-                const genuin = document.satei.genuin;
-		const numGenuin = genuin.selectedIndex;
-		const strGenuin = genuin.options[numGenuin].value;
-		const others = $('input[name="others"]').val();
+		const genuine = document.satei.enuine;
+		const numGenuine = genuine.selectedIndex;
+		const strGenuine = genuine.options[numGuarantee].value;
+                const others = $('input[name="others"]').val();
+                
                    
 		const msgStart = `フォーム受付`;
                 sendText(msgStart);
 		    
-                const msgForm = `【時計査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル名・型式：${model}\n③コンディション：${strCondition}\n④年式：${modelyear}\n⑤シリアル：${serial}\n⑥ギャランティー/保証書：${strGuarantee}\n⑦正規品/並行輸入品：${strGenuin}\n⑧その他情報：${others}`;
+                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル・型式：${model}\n⑤コンディション：${strCondition}\n④年式：${modelYear}\n⑤シリアル：${serial}\n⑥ギャランティー/保証書：${strGuarantee}\n⑦正規品/並行輸入品：${strGenuine}\n⑧その他情報：${others}`;
                 sendText(msgForm);
 		    
                 return false;
