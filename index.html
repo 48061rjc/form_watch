@@ -115,7 +115,7 @@
 		const strGenuin = genuin.options[numGenuin].value;
 		const others = $('input[name="others"]').val();
                    
-		const msgStart = `査定スタート`;
+		const msgStart = `フォーム受付`;
                 sendText(msgStart);
 		    
                 const msgForm = `【時計査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル名・型式：${model}\n③コンディション：${strCondition}\n④年式：${modelyear}\n⑤シリアル：${serial}\n⑥ギャランティー/保証書：${strGuarantee}\n⑦正規品/並行輸入品：${strGenuin}\n⑧その他情報：${others}`;
