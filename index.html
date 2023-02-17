@@ -48,7 +48,7 @@
             <input class="form-control w-100 mt-1" name="serial">
 	    </div>
 
-        <p class="mt-3">⑧ その他情報</p>
+        <p class="mt-3">⑦ その他情報</p>
         <div>
             <textarea class="form-control w-100 mt-1" name="others" rows="3"></textarea>
         </div>
@@ -110,21 +110,21 @@
             $('form').submit(function () {
                 const brand = $('input[name="brand"]').val();
                 const model = $('input[name="model"]').val();
-        	const condition = document.satei.condition;
-	        const numCondition = condition.selectedIndex;
-	        const strCondition = condition.options[numCondition].value;
+        		const condition = document.satei.condition;
+	        	const numCondition = condition.selectedIndex;
+	        	const strCondition = condition.options[numCondition].value;
                 const serial = $('input[name="serial"]').val();
-		const chk1 = document.satei.chk1;
+		        const chk1 = document.satei.chk1;
                 const others = $('input[name="others"]').val();
 
                 const guarantee = document.satei.guarantee;
-		const numGuarantee = guarantee.selectedIndex;
-		const strGuarantee = guarantee.options[numGuarantee].value;
-		const genuine = document.satei.genuine;
-		const numGenuine = genuine.selectedIndex;
-		const strGenuine = genuine.options[numGenuine].value;
+		        const numGuarantee = guarantee.selectedIndex;
+		        const strGuarantee = guarantee.options[numGuarantee].value;
+		        const genuine = document.satei.genuine;
+		        const numGenuine = genuine.selectedIndex;
+		        const strGenuine = genuine.options[numGenuine].value;
 		    
-                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル・型式：${model}\n⑤コンディション：${strCondition}\n④付属品：${chk}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
+                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル・型式：${model}\n⑤コンディション：${strCondition}\n④付属品：${chk1}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
                 sendText(msgForm);
 		    
 		        const msgStart = `フォーム送信🌸🙆‍♀️`;
