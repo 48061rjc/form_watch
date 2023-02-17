@@ -32,15 +32,11 @@
 	    </select>
         </div>
 
-	    <p class="mt-3">④ 付属品</p>
+	    <p class="mt-3">④ 付属品(複数選択可)</p>
         <div class="form-wrapper">
-            <label><input type="checkbox" name="chk1" value="外箱あり" /> 外箱あり</label>
-        </div>
-        <div class="form-wrapper">
-            <label><input type="checkbox" name="chk1" value="内箱あり" /> 内箱あり</label>
-        </div>
-        <div class="form-wrapper">
-		    <label><input type="checkbox" name="chk1" value="保証書あり" /> 保証書あり</label>
+            <label><input type="checkbox" name="accessories" value="外箱" /> 外箱あり</label>
+            <label><input type="checkbox" name="accessories" value="内箱" /> 内箱あり</label>
+		    <label><input type="checkbox" name="accessories" value="保証書" /> 保証書あり</label>
 	    </div>
 
         <p class="mt-3">⑤ 年式 または シリアル</p>
@@ -63,20 +59,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
-        function clickBtn1() {
-            const arr = [];
-            const chk1 = document.satei.chk1;
 
-        for (let i = 0; i <script chk.length; i++) {
-            if (chk[i].checked) {//(chk[i].checked === true)と同じ
-            arr.push(chk[i].value);
-            }
-        }
-        document.getElementById("span1").textContent = arr;
-        }
-    </script>
-
-    <script>
         $(document).ready(function () {
             const liffId = "1657806132-nDD94e6Q";
             initializeLiff(liffId);
@@ -114,7 +97,7 @@
 	        	const numCondition = condition.selectedIndex;
 	        	const strCondition = condition.options[numCondition].value;
                 const serial = $('input[name="serial"]').val();
-		        const chk1 = document.satei.chk1;
+		        const acce = document.querySelectorAll("input[name=accessories]:checked");
                 const others = $('input[name="others"]').val();
 
                 const guarantee = document.satei.guarantee;
@@ -124,7 +107,7 @@
 		        const numGenuine = genuine.selectedIndex;
 		        const strGenuine = genuine.options[numGenuine].value;
 		    
-                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル・型式：${model}\n⑤コンディション：${strCondition}\n④付属品：${chk1}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
+                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル・型式：${model}\n⑤コンディション：${strCondition}\n④付属品：${acce}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
                 sendText(msgForm);
 		    
 		        const msgStart = `フォーム送信🌸🙆‍♀️`;
