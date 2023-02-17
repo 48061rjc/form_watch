@@ -15,7 +15,7 @@
             <input class="form-control w-100 mt-1" name="brand" required>
         </div>
 
-        <p class="mt-3">② 型番(モデル・型式)*</p>
+        <p class="mt-3">② 型番 (モデル・型式)*</p>
         <div>
             <input class="form-control w-100 mt-1" name="model" required>
         </div>
@@ -32,11 +32,11 @@
 	    </select>
         </div>
 
-	    <p class="mt-3">④ 付属品(複数選択可)</p>
+	    <p class="mt-3">④ 付属品 (複数選択可)</p>
         <div class="form-wrapper">
-            <label><input type="checkbox" name="accessories" value="外箱" /> 外箱あり　</label>
-            <label><input type="checkbox" name="accessories" value="内箱" /> 内箱あり　</label>
-		    <label><input type="checkbox" name="accessories" value="保証書" /> 保証書あり　</label>
+            <input type="checkbox" name="accessories" value="外箱" /> 外箱あり　
+            <input type="checkbox" name="accessories" value="内箱" /> 内箱あり　
+		    <input type="checkbox" name="accessories" value="保証書" /> 保証書あり　
 	    </div>
 
         <p class="mt-3">⑤ 年式 または シリアル</p>
@@ -107,7 +107,7 @@
 		        const numGenuine = genuine.selectedIndex;
 		        const strGenuine = genuine.options[numGenuine].value;
 		    
-                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②モデル・型式：${model}\n⑤コンディション：${strCondition}\n④付属品：${acce}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
+                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②型番：${model}\n⑤コンディション：${strCondition}\n④付属品：${acce}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
                 sendText(msgForm);
 		    
 		        const msgStart = `フォーム送信🌸🙆‍♀️`;
