@@ -39,12 +39,10 @@
         </div>
 	<p class="mt-3">⑥ ギャランティー/保証書</p>
         <div class="form-wrapper">
-		<input type="checkbox" id="check1" name="guarantee" value="保証書あり">
-		<label for="check1">保証書あり</label>
+		<label><input type="checkbox" name="chk1" value="保証書あり" checked />保証書あり</label>
 	</div>
 	<div class="form-wrapper">
-		<input type="checkbox" id="check2" name="box" value="box">
-		<label for="check2">箱あり</label>
+		<label><input type="checkbox" name="chk1" value="箱あり" checked />箱あり</label>
         </div>
 	<p class="mt-3">⑦ 正規品/並行輸入品</p>
         <div>
@@ -68,6 +66,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
+	    
+        function clickBtn1() {
+    const arr = [];
+    const chk1 = document.form1.chk1;
+
+    for (let i = 0; i < chk1.length; i++) {
+      if (chk1[i].checked) {//(chk1[i].checked === true)と同じ
+        arr.push(chk1[i].value);
+      }
+    }
+    document.getElementById("span1").textContent = arr;
+  }
         
         $(document).ready(function () {
             const liffId = "1657806132-nDD94e6Q";
