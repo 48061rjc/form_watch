@@ -32,11 +32,17 @@
 	    </select>
         </div>
 
-	    <p class="mt-3">④ 付属品 (複数選択可a)</p>
+	    <p class="mt-3">④ 付属品 (複数選択可)</p>
         <div class="form-wrapper">
-            <label><input type="checkbox" name="accessories" value="外箱" /> 外箱あり</label><br>
-            <label><input type="checkbox" name="accessories" value="内箱" /> 内箱あり</label><br>
-		    <label></label><input type="checkbox" name="accessories" value="保証書" /> 保証書あり</label>
+            <div>
+                <label><input type="checkbox" name="accessories" value="外箱" /> 外箱あり</label>
+            </div>
+            <div>
+                <label><input type="checkbox" name="accessories" value="内箱" /> 内箱あり</label>
+            </div>
+            <div>
+		        <label></label><input type="checkbox" name="accessories" value="保証書" /> 保証書あり</label>
+            </div>
 	    </div>
 
         <p class="mt-3">⑤ 年式 または シリアル</p>
@@ -99,13 +105,7 @@
                 const serial = $('input[name="serial"]').val();
                 const others = $('input[name="others"]').val();
                 
-                const acce = document.querySelectorAll("input[name="accessories"]:checked");
-                
-                if( 0 < acce.length ) {
-                    	for(let checked_data of acce) {
-                            console.log(checked_data.value); // 1, 2, 5
-                        }
-                    }
+                const acce = document.querySelectorAll(`input[type='checkbox'][name='accessories']`);
 
                 const guarantee = document.satei.guarantee;
 		        const numGuarantee = guarantee.selectedIndex;
