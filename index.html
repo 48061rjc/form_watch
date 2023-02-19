@@ -97,17 +97,23 @@
 	        	const numCondition = condition.selectedIndex;
 	        	const strCondition = condition.options[numCondition].value;
                 const serial = $('input[name="serial"]').val();
-		        const acce = document.querySelectorAll("input[name=accessories]:checked");
                 const others = $('input[name="others"]').val();
+
+                const arr = [];
+                const acce = document.getElementsByName("accessories");
+                
+                for (let i = 0; i < acce.length; i++) {
+                    if (acce[i].checked) {//(acce[i].checked === true)と同じ
+                        arr.push(acce[i].value);
+                    }
+                }
+                document.getElementById("strAcce").textContent = arr;
 
                 const guarantee = document.satei.guarantee;
 		        const numGuarantee = guarantee.selectedIndex;
 		        const strGuarantee = guarantee.options[numGuarantee].value;
-		        const genuine = document.satei.genuine;
-		        const numGenuine = genuine.selectedIndex;
-		        const strGenuine = genuine.options[numGenuine].value;
 		    
-                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②型番：${model}\n⑤コンディション：${strCondition}\n④付属品：${acce}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
+                const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②型番：${model}\n⑤コンディション：${strCondition}\n④付属品：${strAcce}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
                 sendText(msgForm);
 		    
 		        const msgStart = `フォーム送信🌸🙆‍♀️`;
