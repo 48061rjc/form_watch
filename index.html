@@ -32,7 +32,7 @@
 	    </select>
         </div>
 
-	    <p class="mt-3">④ 付属品 (複数選択可A)</p>
+	    <p class="mt-3">④ 付属品 (複数選択可)</p>
         <div class="form-wrapper">
             <div>
                 <label><input type="checkbox" name="accessories" value="外箱" /> 外箱あり</label>
@@ -107,14 +107,12 @@
                 
                 $('[name="accessories"]:checked').map(function() {
                     acce = $(this).val();
-                });
-
-                const guarantee = document.satei.guarantee;
-		        const numGuarantee = guarantee.selectedIndex;
-		        const strGuarantee = guarantee.options[numGuarantee].value;
+                
 		    
                 const msgForm = `【ブランド査定依頼フォーム】\n\n①ブランド名：${brand}\n②型番：${model}\n⑤コンディション：${strCondition}\n④付属品：${acce}\n⑤年式またはシリアル：${serial}\n⑥その他：${others}`;
                 sendText(msgForm);
+
+            });
 		    
 		        const msgStart = `フォーム送信🌸🙆‍♀️`;
                 sendText(msgStart);
