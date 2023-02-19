@@ -32,7 +32,7 @@
 	    </select>
         </div>
 
-	    <p class="mt-3">④ 付属品 (複数選択可)</p>
+	    <p class="mt-3">④ 付属品 (複数選択可a)</p>
         <div class="form-wrapper">
             <input type="checkbox" name="accessories" value="外箱" /> 外箱あり　
             <input type="checkbox" name="accessories" value="内箱" /> 内箱あり　
@@ -104,8 +104,8 @@
                     const str = '';
 
                     for ( i = 0; i < 3; i++) {
-                        if ( accessories[i].checked === true ) {
-                            str += accessories[i].value + " ";
+                        if ( acce[i].checked === true ) {
+                            str += acce[i].value + " ";
                     }
                 }
             }
